@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM CHINI MUSIC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '7220249721355274');
+    fbq('track', 'PageView');
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=7220249721355274&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background: #000;
+        }
+
+        @font-face {
+            font-family: 'MiFuente';
+            src: url('mi-fuente.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background-image: url('background.jpg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0,0,0,0.20) 0%,
+                rgba(0,0,0,0.35) 45%,
+                rgba(0,0,0,0.55) 100%
+            );
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+        }
+
+        .title {
+            font-family: 'MiFuente', 'Montserrat', sans-serif;
+            font-size: clamp(40px, 9vw, 88px);
+            line-height: 0.95;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.45);
+        }
+
+        .subtitle {
+            max-width: 720px;
+            font-size: clamp(16px, 2.2vw, 24px);
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            line-height: 1.4;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+        }
+
+        .description {
+            max-width: 680px;
+            font-size: clamp(14px, 1.8vw, 18px);
+            font-weight: 400;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.5;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+        }
+
+        .button {
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            min-width: 290px;
+            padding: 16px 28px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1DB954, #169c46);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+            animation: zoomPulse 1.8s infinite;
+        }
+
+        .button:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+            filter: brightness(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .spotify-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .small-text {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.88);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+        }
+
+        @keyframes zoomPulse {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+
+        @media screen and (max-width: 768px) {
+            .landing {
+                height: 100dvh;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-color: #000;
+            }
+
+            .content {
+                padding: 20px 18px 28px;
+                gap: 14px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .description {
+                font-size: 14px;
+            }
+
+            .button {
+                min-width: 250px;
+                width: 100%;
+                max-width: 320px;
+                font-size: 16px;
+                padding: 15px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="landing">
+        <div class="overlay"></div>
+
+        <div class="content">
+            <div class="eyebrow">Nuevo lanzamiento</div>
+
+            <h1 class="title">From The End Of The World</h1>
+
+            <div class="subtitle">
+                Escucha ahora mi nuevo EP en Spotify
+            </div>
+
+            <p class="description">
+                Dale play, súbelo al máximo y únete al lanzamiento oficial.
+                Disponible ya en Spotify.
+            </p>
+
+            <a 
+                href="https://open.spotify.com/intl-es/album/555ROdLker9XhMd8xid7cj?si=ciy_n3aXToyCJHla2jSCYw" 
+                class="button" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onclick="trackPurchase(event, this.href);"
+            >
+                <svg class="spotify-icon" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="84" cy="84" r="84" fill="black"/>
+                    <path d="M121.2 117.3C119.6 120 116.2 120.8 113.5 119.2C92.7 106.6 66.4 103.8 35.2 110.9C32.1 111.6 29 109.7 28.3 106.6C27.6 103.5 29.5 100.4 32.6 99.7C66.8 92 96.2 95.3 119.4 109.3C122.1 110.9 122.8 114.5 121.2 117.3Z" fill="#1DB954"/>
+                    <path d="M132.7 91.8C130.7 95 126.4 96 123.2 94C99.3 79.3 62.9 75 34.7 83.6C31 84.8 27 82.7 25.9 79C24.7 75.3 26.8 71.3 30.5 70.2C62.8 60.3 103.1 65.1 130.6 82C133.9 84 134.8 88.4 132.7 91.8Z" fill="#1DB954"/>
+                    <path d="M133.9 63.3C105.2 46.2 57.7 44.6 30.4 53C26.1 54.3 21.5 51.9 20.2 47.6C18.9 43.3 21.3 38.7 25.6 37.4C57 27.8 109.2 29.6 142.1 49.2C146 51.5 147.2 56.5 144.9 60.4C142.5 64.3 137.7 65.6 133.9 63.3Z" fill="#1DB954"/>
+                </svg>
+                Escuchar en Spotify
+            </a>
+
+            <div class="small-text">
+                Disponible ahora
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function trackPurchase(event, url) {
+        event.preventDefault();
+
+        if (typeof fbq === 'function') {
+            fbq('track', 'Purchase', {
+                content_name: 'From The End Of The World',
+                content_type: 'music',
+                content_ids: ['5fi8kozBjhekkFirkWAsoJ']
+            });
+        }
+
+        setTimeout(function() {
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }, 300);
+    }
+    </script>
+</body>
+</html>
