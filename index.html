@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CHINI — NOT WELCOME · Jueves 20 de agosto</title>
-<meta name="description" content="CHINI presenta NOT WELCOME. Jueves 20 de agosto. Entradas a la venta.">
+<title>CHINI B2B MIRALLES — Live at AFRIKA · Set nuevo en YouTube</title>
+<meta name="description" content="CHINI B2B MIRALLES, en vivo a las 4AM en AFRIKA, Buenos Aires. El set completo, en YouTube.">
 <meta name="theme-color" content="#000000">
 
 <!-- Open Graph: así se ve el preview al compartir el link en IG / WhatsApp / Telegram -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="CHINI — NOT WELCOME">
-<meta property="og:description" content="Jueves 20 de agosto. Entradas a la venta.">
-<meta property="og:image" content="og.jpg"><!-- EDITAR: subí una imagen 1200x630 con este nombre -->
+<meta property="og:title" content="CHINI B2B MIRALLES — Live at AFRIKA">
+<meta property="og:description" content="4AM. Buenos Aires. El set completo, en YouTube.">
+<meta property="og:image" content="https://i.ytimg.com/vi/GIkhzpoz_pg/maxresdefault.jpg"><!-- miniatura del video; cambiala junto con el link cuando salga el próximo set -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -254,6 +254,7 @@
     letter-spacing:.22em;
     text-transform:uppercase;
     text-decoration:none;
+    white-space:nowrap;
     overflow:hidden;
     isolation:isolate;
     cursor:pointer;
@@ -353,7 +354,10 @@
     .logo-wrap{width:min(72vw,360px)}
     .billing{gap:12px}
     .when{padding:9px 0}
-    .cta{padding:20px 28px}
+    .cta{padding:20px 22px;gap:12px;letter-spacing:.14em;font-size:clamp(14px,4vw,17px)}
+  }
+  @media (max-width:340px){
+    .cta{padding:18px 14px;gap:10px;letter-spacing:.08em}
   }
 
   /* --- apaisado o pantalla baja: comprime para que todo entre sin scroll --- */
@@ -404,7 +408,7 @@
 
   <main class="stage">
 
-    <p class="eyebrow">Próxima fecha</p>
+    <p class="eyebrow">Set nuevo</p>
 
     <div>
       <span class="logo-wrap">
@@ -413,14 +417,14 @@
     </div>
 
     <div class="billing">
-      <h1 class="title"><span>Not</span><span>Welcome</span></h1>
-      <p class="when">Jueves 20 de agosto</p>
-      <p class="countdown" id="countdown" aria-live="polite"></p>
+      <h1 class="title"><span>B2B</span><span>Miralles</span></h1>
+      <p class="when">Live at Afrika · Buenos Aires</p>
+      <p class="countdown">1h 18m 56s · Set completo</p>
     </div>
 
-    <a class="cta" href="https://venti.live/checkout/not-welcome-presents-maximiliano?step=tickets" id="tickets" target="_blank" rel="noopener">
+    <a class="cta" href="https://www.youtube.com/watch?v=GIkhzpoz_pg" id="listen" target="_blank" rel="noopener">
       <span class="notch l" aria-hidden="true"></span>
-      Comprar entradas
+      Escuchar en YouTube
       <span class="arrow" aria-hidden="true">→</span>
       <span class="notch r" aria-hidden="true"></span>
     </a>
@@ -428,10 +432,12 @@
   </main>
 
 <script>
-  // Meta Pixel: registra Purchase cada vez que hacen click en Comprar entradas.
-  var tickets = document.getElementById("tickets");
-  if (tickets){
-    tickets.addEventListener("click", function(){
+  // Meta Pixel: registra Purchase cada vez que hacen click en Escuchar en YouTube.
+  // Se mantiene el mismo evento que usaba el botón de entradas para no romper
+  // la optimización de las campañas que ya apuntan a Purchase.
+  var listen = document.getElementById("listen");
+  if (listen){
+    listen.addEventListener("click", function(){
       if (typeof fbq === "function") fbq("track", "Purchase");
     });
   }
@@ -441,26 +447,6 @@
     var t = document.querySelector(".tune");
     if (t) t.remove();
   }, 1800);
-
-  // Cuenta regresiva hasta el show. Cambiá la fecha y la hora acá cuando anuncies la próxima.
-  var SHOW = new Date("2026-08-20T23:59:00-03:00");
-  var el = document.getElementById("countdown");
-
-  function tick(){
-    var ms = SHOW - new Date();
-    if (ms <= 0){ el.textContent = "Es hoy"; return; }
-    var d = Math.floor(ms / 86400000);
-    var h = Math.floor(ms % 86400000 / 3600000);
-    var m = Math.floor(ms % 3600000 / 60000);
-    var s = Math.floor(ms % 60000 / 1000);
-    el.textContent = d + "d "
-      + String(h).padStart(2,"0") + "h "
-      + String(m).padStart(2,"0") + "m "
-      + String(s).padStart(2,"0") + "s";
-  }
-
-  tick();
-  setInterval(tick, 1000);
 </script>
 
 </body>
